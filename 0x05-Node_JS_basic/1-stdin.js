@@ -1,3 +1,4 @@
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -8,5 +9,5 @@ const rl = readline.createInterface({
 rl.question('Welcome to ALX, what is your name?\n', (answer) => {
   console.log(`Your name is: ${answer}`);
     rl.close();
-    console.log('This important software is now closing');
+    console.log('This important software is now closing\n');
 });
