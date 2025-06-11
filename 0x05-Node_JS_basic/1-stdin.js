@@ -1,4 +1,4 @@
-Process.stdout.write('Welcome to ALX, what is your name?\n');
+Process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 if (process.stdin.isTTY) {
     process.stdin.on('data', (data) => {
@@ -11,7 +11,7 @@ if (process.stdin.isTTY) {
         process.exit();
     });
     process.on('exit', () => {
-        process.stdout.write('This important software is now closing');
+        process.stdout.write('This important software is now closing\n');
 });
 }
 
