@@ -47,7 +47,7 @@ const app = http.createServer((req, res) => {
 
   if (urlPath === '/') {
     // Root path - Respond with Hello ALX!
-    res.end('Hello ALX!');
+    res.end('Hello Holberton School!');
   } else if (urlPath === '/students' && method === 'GET') {
     // /students path - Respond with list of students
     const dbFilePath = process.argv[2]; // The database path passed as an argument
