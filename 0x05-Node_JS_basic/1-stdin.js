@@ -1,16 +1,26 @@
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+#!/usr/bin/node
+/**
+ * 1-stdin.js
+ * Prompt for a name, echo it, then on piped input print a closing message.
+ */
 
-if (process.stdin.isTTY) {
-  process.stdin.on('data', (data) => {
-    process.stdout.write(`Your name is: ${data.toString()}`);
-    process.exit();
-  });
-} else {
-  process.stdin.on('data', (data) => {
-    process.stdout.write(`Your name is: ${data.toString()}`);
-    process.exit();
-  });
-    process.on('exit', () => {
-        process.stdout.write('This important software is now closing\n');
-    });
-}
+console.log('Welcome to Holberton School, what is your name?');
+
+let gotName = false;
+process.stdin.setEncoding('utf-8');
+
+process.stdin.on('data', (chunk) => {
+  if (gotName) return;
+  gotName = true;
+  const name = chunk.trim();
+  console.log(`Your name is: ${name}`);
+  if (process.stdin.isTTY) {
+    process.exit(0);
+  }
+});
+
+process.stdin.on('end', () => {
+  console.log('This important software is now closing');
+});
+
+process.stdin.resume();
