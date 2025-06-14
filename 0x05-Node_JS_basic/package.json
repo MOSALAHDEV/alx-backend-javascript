@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint",
+    "lint": "eslint \"0-console.js\"",
     "check-lint": "lint [0-9]*.js",
     "test": "./node_modules/mocha/bin/mocha --require babel-register --exit",
     "dev": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv"
@@ -24,6 +24,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-react": "^7.37.5",
     "mocha": "^6.2.2",
     "nodemon": "^2.0.2",
     "request": "^2.88.0",
